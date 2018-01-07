@@ -77,3 +77,19 @@ function unmatched() {
 }
 
 // disable cards temporarily
+function disable() {
+  Array.prototype.filter.call(cards, function(card) {
+    card,classList.add('disabled');
+  });
+}
+
+// enable cards and disable matched cards
+function enable() {
+  Array.prototype.filter.call(cards, function(card){
+    card.classList.remove('disabled');
+    for(var i = 0; i < matchedCard.length; i++){
+      matchedCard[i].classList.add("disabled");
+    }
+  });
+}
+
